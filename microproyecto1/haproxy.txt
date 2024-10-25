@@ -1,0 +1,3 @@
+sudo systemctl enable haproxy
+sudo systemctl status haproxy.service
+ sudo systemctl restart haproxy

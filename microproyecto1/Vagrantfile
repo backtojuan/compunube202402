@@ -1,0 +1,30 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "bento/ubuntu-22.04"
+
+  if Vagrant.has_plugin? "vagrant-vbguest"
+    config.vbguest.no_install  = true
+    config.vbguest.auto_update = false
+    config.vbguest.no_remote   = true
+  end
+
+  # Máquina 1: HAproxy y Consul server
+  config.vm.define "haproxy" do |haproxy|
+    haproxy.vm.network "private_network", ip: "192.168.100.10"
+    haproxy.vm.hostname = "haproxy"
+    haproxy.vm.provision "shell", path: "script.sh"
+  end
+
+  # Máquina 2: Consul Agent y Artillery
+  config.vm.define "machineweb1" do |machineweb1|
+    machineweb1.vm.network "private_network", ip: "192.168.100.11"
+    machineweb1.vm.hostname = "machineweb1"
+    machineweb1.vm.provision "shell", path: "script.sh"
+  end
+
+  # Máquina 3: Consul Agent y Artillery
+  config.vm.define "machineweb2" do |machineweb2|
+    machineweb2.vm.network "private_network", ip: "192.168.100.12"
+    machineweb2.vm.hostname = "machineweb2"
+    machineweb2.vm.provision "shell", path: "script.sh"
+  end
+end

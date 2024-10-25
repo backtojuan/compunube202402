@@ -1,0 +1,9 @@
+# Install artillery
+sudo npm install -g artillery
+sudo npm fund
+
+# Run a quick test
+#The “quick” option allows you to run a simple, quick test without having to create a config file.
+#The “count” option allows you to create a certain number of “virtual users” 
+#The “-n” option define the number of requests each virtual user is sending. 
+artillery quick --count 10 -n 20 https://192.168.100.10/
