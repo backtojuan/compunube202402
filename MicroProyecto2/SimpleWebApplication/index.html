@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Bienvenida</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #0078d4;
+        }
+        p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Bienvenido a Nuestra Página!</h1>
+        <p>Estamos encantados de tenerte aquí. Esta página está corriendo bajo un contenedor Docker, desplegado en un clúster de Azure Kubernetes Service (AKS).</p>
+        <h2>¿Qué son los contenedores y Kubernetes?</h2>
+        <p><strong>Contenedores:</strong> Un contenedor es una unidad estándar de software que empaqueta código y todas sus dependencias para que la aplicación se ejecute de manera rápida y confiable en cualquier entorno. Usando contenedores, se evita el "funciona en mi máquina", ya que el contenedor lleva consigo todo lo necesario para funcionar.</p>
+        <p><strong>Kubernetes:</strong> Kubernetes es una plataforma de orquestación de contenedores que permite administrar, desplegar y escalar aplicaciones en contenedores de manera eficiente. Kubernetes organiza contenedores en grupos llamados "pods" y distribuye las cargas de trabajo de forma equilibrada.</p>
+        <p><strong>Escalabilidad:</strong> Gracias a Kubernetes, las aplicaciones pueden escalar automáticamente según la demanda. Cuando hay mayor tráfico, Kubernetes puede crear más instancias de contenedores para manejarlo; cuando disminuye, reduce el número de contenedores para ahorrar recursos. Esto garantiza que las aplicaciones sean altamente disponibles y respondan eficientemente al tráfico cambiante.</p>
+    </div>
+</body>
+</html>

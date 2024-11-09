@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: imageclassifier-deployment
+spec:
+  selector:
+    matchLabels:
+      app: imageclassifier
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: imageclassifier
+    spec:
+     containers:
+     - name: imageclassifier
+       image: backtojuan/imageclassifier:latest
+       imagePullPolicy: Always
+       ports:
+       - containerPort: 8080
